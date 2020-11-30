@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Button fx:id="StenButton" layoutX="14.0" layoutY="54.0" mnemonicParsing="false" onAction="#sten" text="Sten" />
+      <Button fx:id="SaksButton" layoutX="87.0" layoutY="54.0" mnemonicParsing="false" onAction="#saks" text="Saks" />
+      <Button fx:id="PapirButton" layoutX="162.0" layoutY="54.0" mnemonicParsing="false" onAction="#papir" text="Papir" />
+      <ImageView fx:id="PersonImageView" fitHeight="150.0" fitWidth="196.0" layoutX="12.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="285.0" layoutY="167.0" text="VS">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="ComputerImageView" fitHeight="150.0" fitWidth="200.0" layoutX="348.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="348.0" layoutY="59.0" text="Computer" />
+   </children>
+</AnchorPane>
