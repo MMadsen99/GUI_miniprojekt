@@ -17,8 +17,11 @@
       </Label>
       <ImageView fx:id="ComputerImageView" fitHeight="150.0" fitWidth="200.0" layoutX="303.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="303.0" layoutY="59.0" text="Computer" />
-      <Label fx:id="LabelPointTæller" layoutX="235.0" layoutY="339.0" text="hello" />
-      <Button layoutX="155.0" layoutY="54.0" mnemonicParsing="false" text="papir" />
+      <Label fx:id="LabelPointTæller" layoutX="226.0" layoutY="257.0">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Button layoutX="155.0" layoutY="54.0" mnemonicParsing="false" onAction="#papir" text="papir" />
       <Button layoutX="86.0" layoutY="54.0" mnemonicParsing="false" onAction="#saks" text="saks" />
    </children>
 </AnchorPane>
