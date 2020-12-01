@@ -22,88 +22,91 @@ public class Controller {
     @FXML
     ImageView ComputerImageView;
     @FXML
-    TextField pointTæller;
-    @FXML
     Label LabelPointTæller;
+    @FXML
+    Label LabelPointScore;
     int spillerValg = 0;
-    int conputerValg = 0;
+    int computerValg = 0;
 
+    Image sten = new Image("/billeder/rock.png");
+    Image saks = new Image("/billeder/scissors.png");
+    Image papir = new Image("/billeder/paper.png");
 
     public void sten() {
-        Image stenBillede = new Image("https://www.naarlivetslaar.dk/media/1045/sten.jpg?anchor=center&mode=crop&width=767&height=350&rnd=131779525870000000");
-        PersonImageView.setImage(stenBillede);
+
+        PersonImageView.setImage(sten);
 
 
         int random = ((int) (Math.random() * 3) + 1);
 
         if (random == 1) {
-            Image sten = new Image("https://www.naarlivetslaar.dk/media/1045/sten.jpg?anchor=center&mode=crop&width=767&height=350&rnd=131779525870000000");
             ComputerImageView.setImage(sten);
 
-            LabelPointTæller.setText("Draw");
+            LabelPointTæller.setText("   Draw");
         } else if (random == 2) {
-            Image saks = new Image("https://www.danianova.dk/resources/product/745/300/745300.jpg?width=1024&height=768&bgcolor=fff");
             ComputerImageView.setImage(saks);
-
+            spillerVandt();
             LabelPointTæller.setText("You win");
 
         } else if (random == 3) {
-            Image papir = new Image("https://www.cchobby.dk/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/3/23534_1.jpg");
             ComputerImageView.setImage(papir);
-
+            computerVandt();
             LabelPointTæller.setText("You lose");
         }
+        score();
     }
     public void saks() {
-        Image saksBillede = new Image("https://www.danianova.dk/resources/product/745/300/745300.jpg?width=1024&height=768&bgcolor=fff");
-        PersonImageView.setImage(saksBillede);
-        int spillervalg = 2;
+        PersonImageView.setImage(saks);
+
 
         int random = ((int) (Math.random() * 3) + 1);
 
         if (random == 1) {
-            Image sten = new Image("https://www.naarlivetslaar.dk/media/1045/sten.jpg?anchor=center&mode=crop&width=767&height=350&rnd=131779525870000000");
             ComputerImageView.setImage(sten);
-
+            computerVandt();
             LabelPointTæller.setText("You lose");
         } else if (random == 2) {
-            Image saks = new Image("https://www.danianova.dk/resources/product/745/300/745300.jpg?width=1024&height=768&bgcolor=fff");
             ComputerImageView.setImage(saks);
 
-            LabelPointTæller.setText("Draw");
+            LabelPointTæller.setText("   Draw");
         } else if (random == 3) {
-            Image papir = new Image("https://www.cchobby.dk/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/3/23534_1.jpg");
             ComputerImageView.setImage(papir);
-
+            spillerVandt();
             LabelPointTæller.setText("You win");
         }
+        score();
     }
     public void papir() {
-        Image papirBillede = new Image("https://www.cchobby.dk/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/3/23534_1.jpg");
-        PersonImageView.setImage(papirBillede);
-        int spillervalg = 3;
+        PersonImageView.setImage(papir);
+
 
         int random = ((int) (Math.random() * 3) + 1);
 
         if (random == 1) {
-            Image sten = new Image("https://www.naarlivetslaar.dk/media/1045/sten.jpg?anchor=center&mode=crop&width=767&height=350&rnd=131779525870000000");
             ComputerImageView.setImage(sten);
-
+           spillerVandt();
             LabelPointTæller.setText("You win");
-        } else if (random == 2) {
-            Image saks = new Image("https://www.danianova.dk/resources/product/745/300/745300.jpg?width=1024&height=768&bgcolor=fff");
-            ComputerImageView.setImage(saks);
 
+           int spillerValg = 1;
+        } else if (random == 2) {
+            ComputerImageView.setImage(saks);
+            computerVandt();
             LabelPointTæller.setText("You lose");
         } else if (random == 3) {
-            Image papir = new Image("https://www.cchobby.dk/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/3/23534_1.jpg");
             ComputerImageView.setImage(papir);
 
-            LabelPointTæller.setText("Draw");
+            LabelPointTæller.setText("   Draw");
         }
+        score();
+    }
+    public void spillerVandt(){
+        ++spillerValg;
+    }
+    public void computerVandt(){
+        ++computerValg;
     }
     public void score(){
 
-
+        LabelPointScore.setText(spillerValg + "-" + computerValg);
     }
 }
