@@ -25,12 +25,14 @@ public class Controller {
     TextField pointTæller;
     @FXML
     Label LabelPointTæller;
+    int spillerValg = 0;
+    int conputerValg = 0;
 
 
     public void sten() {
         Image stenBillede = new Image("https://www.naarlivetslaar.dk/media/1045/sten.jpg?anchor=center&mode=crop&width=767&height=350&rnd=131779525870000000");
         PersonImageView.setImage(stenBillede);
-        int spillervalg = 1;
+
 
         int random = ((int) (Math.random() * 3) + 1);
 
@@ -44,6 +46,7 @@ public class Controller {
             ComputerImageView.setImage(saks);
 
             LabelPointTæller.setText("You win");
+
         } else if (random == 3) {
             Image papir = new Image("https://www.cchobby.dk/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/3/23534_1.jpg");
             ComputerImageView.setImage(papir);
@@ -99,21 +102,8 @@ public class Controller {
             LabelPointTæller.setText("Draw");
         }
     }
+    public void score(){
+
+
+    }
 }
-
-
-/*
- int random = ((int) (Math.random() * 3) + 1);
-
-            if (random == 1) {
-                Image stenC = new Image("https://www.naarlivetslaar.dk/media/1045/sten.jpg?anchor=center&mode=crop&width=767&height=350&rnd=131779525870000000");
-                ComputerImageView.setImage(stenC);
-            } else if (random == 2) {
-                Image saksC = new Image("https://www.danianova.dk/resources/product/745/300/745300.jpg?width=1024&height=768&bgcolor=fff");
-                ComputerImageView.setImage(saksC);
-            } else if (random == 3) {
-                Image papirC = new Image("https://www.cchobby.dk/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/3/23534_1.jpg");
-                ComputerImageView.setImage(papirC);
-            }
-
- */
