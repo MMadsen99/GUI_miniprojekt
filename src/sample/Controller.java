@@ -51,6 +51,30 @@ public class Controller {
             LabelPointTæller.setText("You lose");
         }
     }
+    public void saks() {
+        Image saksBillede = new Image("https://www.danianova.dk/resources/product/745/300/745300.jpg?width=1024&height=768&bgcolor=fff");
+        PersonImageView.setImage(saksBillede);
+        int spillervalg = 2;
+
+        int random = ((int) (Math.random() * 3) + 1);
+
+        if (random == 1) {
+            Image sten = new Image("https://www.naarlivetslaar.dk/media/1045/sten.jpg?anchor=center&mode=crop&width=767&height=350&rnd=131779525870000000");
+            ComputerImageView.setImage(sten);
+
+            LabelPointTæller.setText("You lose");
+        } else if (random == 2) {
+            Image saks = new Image("https://www.danianova.dk/resources/product/745/300/745300.jpg?width=1024&height=768&bgcolor=fff");
+            ComputerImageView.setImage(saks);
+
+            LabelPointTæller.setText("Draw");
+        } else if (random == 3) {
+            Image papir = new Image("https://www.cchobby.dk/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/3/23534_1.jpg");
+            ComputerImageView.setImage(papir);
+
+            LabelPointTæller.setText("You win");
+        }
+    }
 }
 
 
