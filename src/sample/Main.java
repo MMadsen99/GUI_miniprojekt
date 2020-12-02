@@ -18,7 +18,6 @@ public class Main extends Application {
         primaryStage.setResizable(false);
     }
 
-
     public static void main(String[] args) {
         launch(args);
     }
