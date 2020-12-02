@@ -29,6 +29,6 @@
          </font>
       </Label>
       <Button fx:id="SaveButton" layoutX="13.0" layoutY="345.0" mnemonicParsing="false" onAction="#save" text="Save" />
-      <Button fx:id="LoadButton" layoutX="86.0" layoutY="345.0" mnemonicParsing="false" text="Load" />
+      <Button fx:id="LoadButton" layoutX="86.0" layoutY="345.0" mnemonicParsing="false" onAction="#load" text="Load" />
    </children>
 </AnchorPane>

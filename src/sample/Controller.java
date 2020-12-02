@@ -6,10 +6,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+import java.util.Scanner;
 
 public class Controller {
 
@@ -124,21 +122,32 @@ public class Controller {
 
     public void save() throws IOException {
 
-        try {
-            File file = new File("test.txt");
-            PrintWriter myWriter = new PrintWriter("file.txt");
-            myWriter.write(spillerPoint);
-            myWriter.write(computerPoint);
-            myWriter.close();
-            System.out.println("Successfully wrote to the file.");
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
+        java.io.File file = new java.io.File("src/saveFile.txt");
+        try{
+            java.io.PrintWriter output = new java.io.PrintWriter(file);
+            output.print(spillerPoint + "\n");
+            output.print(computerPoint + "\n");
+
+            output.close();
+            System.out.println("The file has been saved");
+        }catch (Exception e ){
+            System.out.println("Something went wrong");
         }
     }
-    public void load(){
+    public void load() throws FileNotFoundException {
+
+        java.io.File file = new java.io.File("src/saveFile.txt");
+        try{
+            Scanner input = new Scanner(file);
+           /*
+           få de gemte spiller og computer point og vis dem på nuværende scoreboard
+            så man ikke behøver og lave en ny tur før den opdaterede score kommer frem
+            */
 
 
+        }catch (Exception e ){
+            System.out.println("Something went wrong");
+        }
     }
 }
 
