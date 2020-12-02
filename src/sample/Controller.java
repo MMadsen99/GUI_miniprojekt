@@ -7,6 +7,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.security.PublicKey;
 
 public class Controller {
@@ -31,6 +33,7 @@ public class Controller {
     Image sten = new Image("/billeder/rock.png");
     Image saks = new Image("/billeder/scissors.png");
     Image papir = new Image("/billeder/paper.png");
+
 
     public void sten() {
 
@@ -87,7 +90,6 @@ public class Controller {
            spillerVandt();
             LabelPointTæller.setText("You win");
 
-           int spillerValg = 1;
         } else if (random == 2) {
             ComputerImageView.setImage(saks);
             computerVandt();
@@ -109,4 +111,6 @@ public class Controller {
 
         LabelPointScore.setText(spillerValg + "-" + computerValg);
     }
+
 }
+
