@@ -21,13 +21,14 @@
          <font>
             <Font size="24.0" />
          </font></Label>
-      <Button layoutX="155.0" layoutY="54.0" mnemonicParsing="false" onAction="#papir" text="Papir" />
-      <Button layoutX="86.0" layoutY="54.0" mnemonicParsing="false" onAction="#saks" text="Saks" />
+      <Button fx:id="PapirButton" layoutX="155.0" layoutY="54.0" mnemonicParsing="false" onAction="#papir" text="Papir" />
+      <Button fx:id="SaksButton" layoutX="86.0" layoutY="54.0" mnemonicParsing="false" onAction="#saks" text="Saks" />
       <Label fx:id="LabelPointScore" layoutX="231.0" layoutY="344.0" text="Score">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button layoutX="14.0" layoutY="345.0" mnemonicParsing="false" text="Save" />
+      <Button fx:id="SaveButton" layoutX="13.0" layoutY="345.0" mnemonicParsing="false" onAction="#save" text="Save" />
+      <Button fx:id="LoadButton" layoutX="86.0" layoutY="345.0" mnemonicParsing="false" text="Load" />
    </children>
 </AnchorPane>

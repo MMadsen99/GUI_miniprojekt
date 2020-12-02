@@ -3,18 +3,23 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.security.PublicKey;
+import java.io.PrintWriter;
 
 public class Controller {
 
+
     @FXML
     private Button StenButton;
+    @FXML
+    private Button LoadButton;
+    @FXML
+    private Button SaveButton;
     @FXML
     private Button SaksButton;
     @FXML
@@ -27,8 +32,8 @@ public class Controller {
     Label LabelPointTæller;
     @FXML
     Label LabelPointScore;
-    int spillerValg = 0;
-    int computerValg = 0;
+    public int spillerPoint = 0;
+    public int computerPoint = 0;
 
     Image sten = new Image("/billeder/rock.png");
     Image saks = new Image("/billeder/scissors.png");
@@ -58,6 +63,7 @@ public class Controller {
         }
         score();
     }
+
     public void saks() {
         PersonImageView.setImage(saks);
 
@@ -79,6 +85,7 @@ public class Controller {
         }
         score();
     }
+
     public void papir() {
         PersonImageView.setImage(papir);
 
@@ -87,7 +94,7 @@ public class Controller {
 
         if (random == 1) {
             ComputerImageView.setImage(sten);
-           spillerVandt();
+            spillerVandt();
             LabelPointTæller.setText("You win");
 
         } else if (random == 2) {
@@ -101,16 +108,37 @@ public class Controller {
         }
         score();
     }
-    public void spillerVandt(){
-        ++spillerValg;
-    }
-    public void computerVandt(){
-        ++computerValg;
-    }
-    public void score(){
 
-        LabelPointScore.setText(spillerValg + "-" + computerValg);
+    public void spillerVandt() {
+        ++spillerPoint;
     }
 
+    public void computerVandt() {
+        ++computerPoint;
+    }
+
+    public void score() {
+
+        LabelPointScore.setText(spillerPoint + "-" + computerPoint);
+    }
+
+    public void save() throws IOException {
+
+        try {
+            File file = new File("test.txt");
+            PrintWriter myWriter = new PrintWriter("file.txt");
+            myWriter.write(spillerPoint);
+            myWriter.write(computerPoint);
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+    public void load(){
+
+
+    }
 }
 
