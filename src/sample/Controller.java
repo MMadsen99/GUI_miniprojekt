@@ -139,11 +139,14 @@ public class Controller {
         java.io.File file = new java.io.File("src/saveFile.txt");
         try{
             Scanner input = new Scanner(file);
-           /*
-           få de gemte spiller og computer point og vis dem på nuværende scoreboard
-            så man ikke behøver og lave en ny tur før den opdaterede score kommer frem
-            */
+           int sPoint = input.nextInt();
+           int cPoint = input.nextInt();
+           spillerPoint = sPoint;
+           computerPoint = cPoint;
 
+           LabelPointScore.setText(spillerPoint + " - " + computerPoint);
+
+           input.close();
 
         }catch (Exception e ){
             System.out.println("Something went wrong");
