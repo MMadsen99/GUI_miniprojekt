@@ -30,5 +30,6 @@
       </Label>
       <Button fx:id="SaveButton" layoutX="13.0" layoutY="345.0" mnemonicParsing="false" onAction="#save" text="Save" />
       <Button fx:id="LoadButton" layoutX="86.0" layoutY="345.0" mnemonicParsing="false" onAction="#load" text="Load" />
+      <Button fx:id="ResetButton" layoutX="151.0" layoutY="345.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
    </children>
 </AnchorPane>

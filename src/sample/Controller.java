@@ -120,6 +120,13 @@ public class Controller {
         LabelPointScore.setText(spillerPoint + "-" + computerPoint);
     }
 
+    public void reset(){
+        spillerPoint = 0;
+        computerPoint = 0;
+
+        LabelPointScore.setText(spillerPoint + "-" + computerPoint);
+    }
+
     public void save() throws IOException {
 
         java.io.File file = new java.io.File("src/saveFile.txt");
@@ -133,6 +140,7 @@ public class Controller {
         }catch (Exception e ){
             System.out.println("Something went wrong");
         }
+
     }
     public void load() throws FileNotFoundException {
 
@@ -143,14 +151,13 @@ public class Controller {
            int cPoint = input.nextInt();
            spillerPoint = sPoint;
            computerPoint = cPoint;
-
-           LabelPointScore.setText(spillerPoint + " - " + computerPoint);
-
+           LabelPointScore.setText(spillerPoint + "-" + computerPoint);
            input.close();
 
         }catch (Exception e ){
             System.out.println("Something went wrong");
         }
     }
+
 }
 
